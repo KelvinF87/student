@@ -1,0 +1,8 @@
+[
+	{
+		"user":"Kelvin",
+		"password": "123",
+		"email": "kelvin@gmail.com",
+		"type":"admin"
+	}
+]

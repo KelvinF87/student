@@ -1,0 +1,37 @@
+[
+    {
+        "_id": "1",
+        "name": "Laptop Gamer",
+        "descripcion": "Portátil de alto rendimiento para juegos con 16GB RAM y 512GB SSD.",
+        "stock": 15,
+        "price": 1299.99
+    },
+    {
+        "_id": "2",
+        "name": "Monitor 27\" 4K",
+        "descripcion": "Monitor de 27 pulgadas con resolución 4K y tecnología HDR.",
+        "stock": 20,
+        "price": 399.99
+    },
+    {
+        "_id": "3",
+        "name": "Teclado Mecánico",
+        "descripcion": "Teclado mecánico con switches Cherry MX y retroiluminación RGB.",
+        "stock": 30,
+        "price": 99.99
+    },
+    {
+        "_id": "4",
+        "name": "Ratón Inalámbrico",
+        "descripcion": "Ratón inalámbrico ergonómico con sensor óptico de alta precisión.",
+        "stock": 50,
+        "price": 49.99
+    },
+    {
+        "_id": "5",
+        "name": "Disco Duro Externo 1TB",
+        "descripcion": "Disco duro externo de 1TB con conexión USB 3.0.",
+        "stock": 25,
+        "price": 59.99
+    }
+]
