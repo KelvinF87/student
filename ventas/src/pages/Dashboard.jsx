@@ -1,39 +1,67 @@
-import SideBar from "../components/Sidebar";
-import { useState } from "react";
-import TableList from "../components/TableListItem";
-import Productos from "../data/productos.json";
+"use client"
+
+import { useState, useEffect } from "react"
+import SideBar from "../components/Sidebar"
+import ProductList from "../components/ProductList"
+import ClientList from "../components/ClientList"
+import POSInterface from "./PosVen"
+import Productos from "../data/productos.json"
 import Clientes from "../data/clientes.json"
-import TableListCliente from "../components/TableListCliente";
-import POSInterface from "./PosVen";
 
-export default function DashBoard() {
-  const [selectedComponent, setSelectedComponent] = useState("");
+export default function Dashboard() {
+  const [selectedComponent, setSelectedComponent] = useState("Dashboard")
+  const [products, setProducts] = useState(Productos)
+  const [clients, setClients] = useState(Clientes)
 
-  const Components = () => {
-	switch (selectedComponent) {
-	  case "Productos":
-		return <TableList data={Productos} />;
-	  case "Ventas":
-		return <POSInterface />;
-	  case "Clientes":
-		return <TableListCliente data={Clientes} />;
-	  case "Reporte":
-		return <div>Contenido de Reporte</div>;
-	  default:
-		return null;
-	}
-  };
+  const [summary, setSummary] = useState({
+    totalProducts: 0,
+    totalClients: 0,
+    totalSales: 0,
+  })
+
+  useEffect(() => {
+    // Calcular el resumen
+    setSummary({
+      totalProducts: products.length,
+      totalClients: clients.length,
+      totalSales: products.reduce((total, product) => total + product.sales, 0),
+    })
+  }, [products, clients])
+
+  const Components = {
+    Dashboard: (
+      <div className="dashboard-summary">
+        <h2>Resumen</h2>
+        <div className="summary-cards">
+          <div className="summary-card">
+            <h3>Total Productos</h3>
+            <p>{summary.totalProducts}</p>
+          </div>
+          <div className="summary-card">
+            <h3>Total Clientes</h3>
+            <p>{summary.totalClients}</p>
+          </div>
+          <div className="summary-card">
+            <h3>Total Ventas</h3>
+            <p>${summary.totalSales.toFixed(2)==NaN && 0}</p>
+          </div>
+        </div>
+      </div>
+    ),
+    Productos: <ProductList products={products} setProducts={setProducts} />,
+    Ventas: <POSInterface products={products} />,
+    Clientes: <ClientList clients={clients} setClients={setClients} />,
+    Reporte: <div>Contenido de Reporte</div>,
+  }
 
   return (
-	<div className="container-dashboard">
-	  <SideBar onSelectComponents={setSelectedComponent} />
-	  <div className="dashboard">
-		<h1>Dashboard</h1>
-		{selectedComponent && <h3>{selectedComponent}</h3>}
-		{Components()}
-		<img src="" alt="" />
-	  </div>
-	</div>
-  );
+    <div className="container-dashboard">
+      <SideBar onSelectComponents={setSelectedComponent} />
+      <div className="dashboard">
+        <h1>{selectedComponent}</h1>
+        {Components[selectedComponent] || null}
+      </div>
+    </div>
+  )
 }
 

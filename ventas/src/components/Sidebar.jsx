@@ -1,13 +1,26 @@
+import PropTypes from "prop-types"
 
 export default function SideBar({ onSelectComponents }) {
-	return (
-	  <div className="sidebar">
-		<h2>Side Bar</h2>
-		<button className="btn-default btn-max" onClick={() => onSelectComponents("Productos")}>📦Productos</button>
-		<button className="btn-default btn-max" onClick={() => onSelectComponents("Ventas")}>🛒Ventas</button>
-		<button className="btn-default btn-max" onClick={() => onSelectComponents("Clientes")}>🕵️‍♀️Clientes</button>
-		<button className="btn-default btn-max" onClick={() => onSelectComponents("Reporte")}>📑Reporte</button>
-	  </div>
-	);
-  }
-  
+  const buttons = [
+    { label: "📦Productos", value: "Productos" },
+    { label: "🛒Ventas", value: "Ventas" },
+    { label: "🕵️‍♀️Clientes", value: "Clientes" },
+    { label: "📑Reporte", value: "Reporte" },
+  ]
+
+  return (
+    <div className="sidebar">
+      {/* <h2>Side Bar</h2> */}
+      {buttons.map((button) => (
+        <button key={button.value} className="btn-default btn-max" onClick={() => onSelectComponents(button.value)}>
+          {button.label}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+SideBar.propTypes = {
+  onSelectComponents: PropTypes.func.isRequired,
+}
+
