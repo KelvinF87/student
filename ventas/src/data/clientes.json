@@ -1,37 +1,42 @@
 [
-    {
-        "_id": "1",
-        "name": "Juan Pérez",
-        "email": "juan.perez@example.com",
-        "phone": "+34 123 456 789",
-        "address": "Calle Mayor, 123, Madrid, España"
-    },
-    {
-        "_id": "2",
-        "name": "María López",
-        "email": "maria.lopez@example.com",
-        "phone": "+34 987 654 321",
-        "address": "Avenida del Sol, 45, Barcelona, España"
-    },
-    {
-        "_id": "3",
-        "name": "Carlos Gómez",
-        "email": "carlos.gomez@example.com",
-        "phone": "+34 456 789 123",
-        "address": "Plaza de la Constitución, 78, Valencia, España"
-    },
-    {
-        "_id": "4",
-        "name": "Laura Martínez",
-        "email": "laura.martinez@example.com",
-        "phone": "+34 321 654 987",
-        "address": "Calle del Mar, 90, Sevilla, España"
-    },
-    {
-        "_id": "5",
-        "name": "Pedro Sánchez",
-        "email": "pedro.sanchez@example.com",
-        "phone": "+34 789 123 456",
-        "address": "Paseo de la Castellana, 34, Madrid, España"
-    }
+	{
+		"_id": "1",
+		"name": "Juan Pérez",
+		"email": "juan.perez@example.com",
+		"phone": "+34 123 456 789",
+		"address": "Calle Mayor, 123, Madrid, España",
+		"image_url":"../src/assets/icon-512x512.png"
+	},
+	{
+		"_id": "2",
+		"name": "María López",
+		"email": "maria.lopez@example.com",
+		"phone": "+34 987 654 321",
+		"address": "Avenida del Sol, 45, Barcelona, España",
+	"image_url":"../src/assets/icon-512x512.png"
+	},
+	{
+		"_id": "3",
+		"name": "Carlos Gómez",
+		"email": "carlos.gomez@example.com",
+		"phone": "+34 456 789 123",
+		"address": "Plaza de la Constitución, 78, Valencia, España",
+			"image_url":"../src/assets/icon-512x512.png"
+	},
+	{
+		"_id": "4",
+		"name": "Laura Martínez",
+		"email": "laura.martinez@example.com",
+		"phone": "+34 321 654 987",
+		"address": "Calle del Mar, 90, Sevilla, España",
+	"image_url":"../src/assets/icon-512x512.png"
+	},
+	{
+		"_id": "5",
+		"name": "Pedro Sánchez",
+		"email": "pedro.sanchez@example.com",
+		"phone": "+34 789 123 456",
+		"address": "Paseo de la Castellana, 34, Madrid, España",
+		"image_url":"../src/assets/icon-512x512.png"
+	}
 ]

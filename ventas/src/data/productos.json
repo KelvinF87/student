@@ -4,34 +4,39 @@
         "name": "Laptop Gamer",
         "descripcion": "Portátil de alto rendimiento para juegos con 16GB RAM y 512GB SSD.",
         "stock": 15,
-        "price": 1299.99
+        "price": 1299.99,
+        "image_url": "https://pcredcom.com/var/images/product/800.800//import/1/2/2/0/5/4/122054_1.jpg"
     },
     {
         "_id": "2",
         "name": "Monitor 27\" 4K",
         "descripcion": "Monitor de 27 pulgadas con resolución 4K y tecnología HDR.",
         "stock": 20,
-        "price": 399.99
+        "price": 399.99,
+        "image_url": "https://www.electrical-deals.co.uk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/7/27UK650-W-front.jpg"
     },
     {
         "_id": "3",
         "name": "Teclado Mecánico",
         "descripcion": "Teclado mecánico con switches Cherry MX y retroiluminación RGB.",
         "stock": 30,
-        "price": 99.99
+        "price": 99.99,
+        "image_url": "https://www.vsgamers.es/thumbnails/product_gallery_medium/uploads/products/corsair/2-TECLADOS/k70-pro-mini-wireless-60/galeria/teclado-mecanico-corsair-k70-pro-mini-galeria-26.jpg"
     },
     {
         "_id": "4",
         "name": "Ratón Inalámbrico",
         "descripcion": "Ratón inalámbrico ergonómico con sensor óptico de alta precisión.",
         "stock": 50,
-        "price": 49.99
+        "price": 49.99,
+        "image_url": "https://resources.claroshop.com/medios-plazavip/s2/10252/1174391/5d43c3411ee33-raton-inalambrico-victsing-usb-bluetooth-negro-1600x1600.jpg?scale=550"
     },
     {
         "_id": "5",
         "name": "Disco Duro Externo 1TB",
         "descripcion": "Disco duro externo de 1TB con conexión USB 3.0.",
         "stock": 25,
-        "price": 59.99
+        "price": 59.99,
+        "image_url": "https://th.bing.com/th/id/OIP.baGUDvrS90g8E_Ttf3oXlAHaE6?w=259&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
     }
 ]
