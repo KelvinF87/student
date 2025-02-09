@@ -49,6 +49,12 @@ const ProductItem = ({
               setEditedProduct({ ...editedProduct, quantity: e.target.value })
             }
           />
+                <input
+            value={editedProduct.image_url}
+            onChange={(e) =>
+              setEditedProduct({ ...editedProduct, image_url: e.target.value })
+            }
+          /> <br />
           <button onClick={handleUpdate}>Guardar</button>
         </>
       ) : (
