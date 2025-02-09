@@ -18,13 +18,15 @@ const ProductList = ({ products, searchTerm, addToCart }) => {
           <h3>{product.name}</h3>
           <p className="price">${product.price.toFixed(2)}</p>
           <p className="stock">Stock: {product.quantity}</p>
-          <button
-            onClick={() => addToCart(product)}
-            className="addButton"
-            disabled={product.quantity <= 0}
-          >
-            Agregar
-          </button>
+          <div className='buttonContainer-product'>
+            <button
+              onClick={() => addToCart(product)}
+              className="addButton"
+              disabled={product.quantity <= 0}
+            >
+              Agregar..
+            </button>
+          </div>
         </div>
       ))}
     </div>

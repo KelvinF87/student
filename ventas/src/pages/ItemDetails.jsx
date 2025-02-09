@@ -25,6 +25,8 @@ export default function ItemDetails() {
         <div className="card-item-details">
           <img src={producto.image_url} alt={producto.name} />
           <h2>{producto.name}</h2>
+          <hr />
+          <br />
           <p>ID del producto: {idDetails}</p>
           <p>{producto.descripcion}</p>
           <p>Precio: {producto.price}</p>
