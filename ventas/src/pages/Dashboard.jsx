@@ -54,7 +54,7 @@ export default function Dashboard() {
           </div>
           <div className="summary-card">
             <h3>Total Ventas</h3>
-            <p>${summary.totalSales.toFixed(2)}</p>
+            <p>{summary.totalSales.toFixed(2)} €</p>
           </div>
         </div>
       </div>
