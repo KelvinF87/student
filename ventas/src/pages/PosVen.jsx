@@ -73,7 +73,7 @@ const POSInterface = ({ products }) => {
       // Simular procesamiento de pago
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
-      // Crear objeto de venta
+      // Creo objeto de venta
       const sale = {
         id: Date.now(),
         client: selectedClient,
@@ -85,7 +85,7 @@ const POSInterface = ({ products }) => {
         date: new Date().toISOString(),
       };
 
-      // Aquí podrías guardar la venta en tu backend
+      // Aquí es donde se puede guardar la venta en el backend
       console.log('Venta realizada:', sale);
 
       // Limpiar el carrito y cerrar modal

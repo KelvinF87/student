@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import ProductItem from './ProductItem';
 import AddProductForm from './AddProductForm';
 
-export default function ProductList({ products, setProducts, searchTerm, addToCart, isPOS }) {
+export default function ProductList({
+  products = [],
+  setProducts = () => {},
+  searchTerm = "",
+  addToCart = () => {},
+  isPOS = false
+}) {
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -25,18 +31,3 @@ export default function ProductList({ products, setProducts, searchTerm, addToCa
     </div>
   );
 }
-
-ProductList.propTypes = {
-  products: PropTypes.array.isRequired,
-  setProducts: PropTypes.func,
-  searchTerm: PropTypes.string,
-  addToCart: PropTypes.func,
-  isPOS: PropTypes.bool,
-};
-
-ProductList.defaultProps = {
-  setProducts: () => {},
-  searchTerm: "",
-  addToCart: () => {},
-  isPOS: false,
-};

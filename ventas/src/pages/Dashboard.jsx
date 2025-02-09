@@ -22,9 +22,11 @@ export default function Dashboard() {
   useEffect(() => {
     // Calcular el resumen
     setSummary({
-      totalProducts: products.length,
+      // totalProducts: products.length ,
+      totalProducts: products.reduce((total, product) => total + product.quantity, 0),
+      totalTipoProductos: products.length,
       totalClients: clients.length,
-      totalSales: products.reduce((total, product) => total + product.sales, 0),
+      totalSales: products.reduce((total, product) => total + (product.sales* product.price), 0),
     })
   }, [products, clients])
 
@@ -38,12 +40,16 @@ export default function Dashboard() {
             <p>{summary.totalProducts}</p>
           </div>
           <div className="summary-card">
+            <h3>Total Tipo Productos</h3>
+            <p>{summary.totalTipoProductos}</p>
+          </div>
+          <div className="summary-card">
             <h3>Total Clientes</h3>
             <p>{summary.totalClients}</p>
           </div>
           <div className="summary-card">
             <h3>Total Ventas</h3>
-            <p>${summary.totalSales.toFixed(2)==NaN && 0}</p>
+            <p>${summary.totalSales.toFixed(2)}</p>
           </div>
         </div>
       </div>

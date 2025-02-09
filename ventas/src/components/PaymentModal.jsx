@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const PaymentModal = ({
   isOpen,
@@ -26,13 +25,16 @@ const PaymentModal = ({
             <p>Total a pagar: ${calculateTotal().toFixed(2)}</p>
           </div>
           <div className="payment-inputs">
-            <select value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
+            <select
+              value={paymentMethod}
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            >
               <option value="efectivo">Efectivo</option>
               <option value="tarjeta">Tarjeta</option>
               <option value="transferencia">Transferencia</option>
             </select>
 
-            {paymentMethod === 'efectivo' && (
+            {paymentMethod === "efectivo" && (
               <>
                 <input
                   type="number"
@@ -52,7 +54,12 @@ const PaymentModal = ({
             <button type="button" onClick={closeModal} disabled={isProcessing}>
               Cancelar
             </button>
-            <button type="submit" disabled={isProcessing || (paymentMethod === 'efectivo' && !paymentAmount)}>
+            <button
+              type="submit"
+              disabled={
+                isProcessing || (paymentMethod === "efectivo" && !paymentAmount)
+              }
+            >
               {isProcessing ? "Procesando..." : "Confirmar Pago"}
             </button>
           </div>

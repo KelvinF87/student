@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 
 export default function SideBar({ onSelectComponents }) {
   const buttons = [
+    { label: "🎛️Dashboard", value: "Dashboard" },
     { label: "📦Productos", value: "Productos" },
     { label: "🛒Ventas", value: "Ventas" },
     { label: "🕵️‍♀️Clientes", value: "Clientes" },

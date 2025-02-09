@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const ProductItem = ({ product, setProducts, addToCart, isPOS }) => {
+const ProductItem = ({
+  product,
+  setProducts,
+  addToCart = () => {},
+  isPOS = false,
+}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedProduct, setEditedProduct] = useState({ ...product });
 
@@ -13,25 +19,35 @@ const ProductItem = ({ product, setProducts, addToCart, isPOS }) => {
   };
 
   const handleDelete = () => {
-    setProducts((prevProducts) => prevProducts.filter((p) => p._id !== product._id));
+    setProducts((prevProducts) =>
+      prevProducts.filter((p) => p._id !== product._id)
+    );
   };
 
   return (
     <div className="product-card">
-      <img src={product.image_url || "/placeholder.svg"} alt={product.name} />
+      <Link to={`/itemdetails/${product._id}`}>
+        <img src={product.image_url || "/placeholder.svg"} alt={product.name} />
+      </Link>
       {isEditing ? (
         <>
           <input
             value={editedProduct.name}
-            onChange={(e) => setEditedProduct({ ...editedProduct, name: e.target.value })}
+            onChange={(e) =>
+              setEditedProduct({ ...editedProduct, name: e.target.value })
+            }
           />
           <input
             value={editedProduct.price}
-            onChange={(e) => setEditedProduct({ ...editedProduct, price: e.target.value })}
+            onChange={(e) =>
+              setEditedProduct({ ...editedProduct, price: e.target.value })
+            }
           />
           <input
             value={editedProduct.quantity}
-            onChange={(e) => setEditedProduct({ ...editedProduct, quantity: e.target.value })}
+            onChange={(e) =>
+              setEditedProduct({ ...editedProduct, quantity: e.target.value })
+            }
           />
           <button onClick={handleUpdate}>Guardar</button>
         </>
@@ -41,7 +57,11 @@ const ProductItem = ({ product, setProducts, addToCart, isPOS }) => {
           <p>Precio: ${product.price}</p>
           <p>Cantidad: {product.quantity}</p>
           {isPOS ? (
-            <button onClick={() => addToCart(product)} className="addButton" disabled={product.quantity <= 0}>
+            <button
+              onClick={() => addToCart(product)}
+              className="addButton"
+              disabled={product.quantity <= 0}
+            >
               Agregar
             </button>
           ) : (
@@ -61,11 +81,6 @@ ProductItem.propTypes = {
   setProducts: PropTypes.func.isRequired,
   addToCart: PropTypes.func,
   isPOS: PropTypes.bool,
-};
-
-ProductItem.defaultProps = {
-  addToCart: () => {},
-  isPOS: false,
 };
 
 export default ProductItem;
