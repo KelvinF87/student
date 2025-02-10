@@ -27,11 +27,11 @@ export default function ItemDetails() {
           <h2>{producto.name}</h2>
           <hr />
           <br />
-          <p>ID del producto: {idDetails}</p>
+          <p>ID del producto:<span> {idDetails}</span></p>
           <p>{producto.descripcion}</p>
-          <p>Precio: {producto.price}</p>
-          <p>Unidades vendidas: {producto.sales}</p>
-
+          <p>Precio:<span> {producto.price}</span></p>
+          <p>Unidades vendidas:<span> {producto.sales}</span></p>
+<hr />
           <button
             className="btn-default"
             style={{ width: 150, textAlign: "center", fontSize: 16,marginTop: 10, transition: "all 0.3s" }}
