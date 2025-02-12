@@ -16,7 +16,7 @@ const ProductList = ({ products, searchTerm, addToCart }) => {
             className="productImage"
           />
           <h3>{product.name}</h3>
-          <p className="price">${product.price.toFixed(2)}</p>
+          <p className="price">{product.price.toFixed(2)}€</p>
           <p className="stock">Stock: {product.quantity}</p>
           <div className='buttonContainer-product'>
             <button

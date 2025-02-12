@@ -18,7 +18,7 @@ const Cart = ({ cart, updateQuantity, removeFromCart, calculateTotal, selectedCl
             <li key={item._id} className="cartItem">
               <div className="item-details">
                 <span className="item-name">{item.name}</span>
-                <span className="item-price">${(item.price * item.quantity).toFixed(2)}</span>
+                <span className="item-price">{(item.price * item.quantity).toFixed(2)}€</span>
               </div>
               <div className="quantityControl">
                 <button onClick={() => updateQuantity(item._id, item.quantity - 1)}>-</button>
@@ -33,7 +33,7 @@ const Cart = ({ cart, updateQuantity, removeFromCart, calculateTotal, selectedCl
         </ul>
       )}
       <div className="total">
-        <h3>Total: ${calculateTotal().toFixed(2)}</h3>
+        <h3>Total: {calculateTotal().toFixed(2)}€</h3>
       </div>
       <button
         className="checkoutButton"

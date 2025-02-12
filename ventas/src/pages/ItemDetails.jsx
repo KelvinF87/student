@@ -29,7 +29,7 @@ export default function ItemDetails() {
           <br />
           <p>ID del producto:<span> {idDetails}</span></p>
           <p>{producto.descripcion}</p>
-          <p>Precio:<span> {producto.price}</span></p>
+          <p>Precio:<span> {producto.price}€</span></p>
           <p>Unidades vendidas:<span> {producto.sales}</span></p>
 <hr />
           <button

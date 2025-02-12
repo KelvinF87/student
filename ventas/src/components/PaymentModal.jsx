@@ -22,7 +22,7 @@ const PaymentModal = ({
         <form onSubmit={handlePaymentSubmit}>
           <div className="payment-details">
             <p>Cliente: {selectedClient?.name}</p>
-            <p>Total a pagar: ${calculateTotal().toFixed(2)}</p>
+            <p>Total a pagar: {calculateTotal().toFixed(2)}€</p>
           </div>
           <div className="payment-inputs">
             <select
@@ -44,7 +44,7 @@ const PaymentModal = ({
                 />
                 {change > 0 && (
                   <div className="change-amount">
-                    Cambio a devolver: ${change.toFixed(2)}
+                    Cambio a devolver: {change.toFixed(2)}€
                   </div>
                 )}
               </>

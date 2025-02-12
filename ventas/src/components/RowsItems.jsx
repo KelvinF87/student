@@ -8,7 +8,7 @@ export default function RowsItems({ datos }) {
         <img src={datos.image_url || "/placeholder.svg"} alt={datos.name} />
       </span>
       <Link to={`/itemdetails/${datos._id}`}>
-        {datos.name} {datos.price && `Precio: $${datos.price.toFixed(2)}`}
+        {datos.name} {datos.price && `Precio: ${datos.price.toFixed(2)}€`}
       </Link>
     </div>
   )
